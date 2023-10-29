@@ -64,14 +64,17 @@ export class ProdutosComponent implements AfterViewInit{
    apagarRegistro(id : Produto):void{
     this.service.delete(id).subscribe(resposta =>{
       this.router.navigate(['produtos'])
+      this.findAll();
+      Swal.fire(
+        'PARABÉNS!!',
+        'Produto apagado com sucesso!',
+        'success'
 
+      );
 
     })
-    Swal.fire(
-      'PARABÉNS!!',
-      'Produto cadastrado com sucesso!',
-      'success'
-    );
+
+
   }
 
   getById():void{
@@ -80,7 +83,10 @@ export class ProdutosComponent implements AfterViewInit{
     })
   }
 
+  atualizarTabela(): void {
+    this.findAll;
 
+  }
 
 
 }

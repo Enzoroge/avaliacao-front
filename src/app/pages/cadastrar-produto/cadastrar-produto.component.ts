@@ -18,9 +18,11 @@ export class CadastrarProdutoComponent {
 
   }
 
+    nome: string= ''
+
     produtoForm = new FormGroup({
     nome: new FormControl('', Validators.required),
-    codigoDeBarra: new FormControl(''),
+    codigoDeBarra: new FormControl('', Validators.maxLength(12)),
     preco: new FormControl(0)
   });
 
@@ -40,6 +42,14 @@ export class CadastrarProdutoComponent {
         Swal.fire('DEU ERRO', message, 'error');
       }
     );
+  }
+
+  errorValidName(){
+    if(this.nome != null){
+      return 'O nome deve ter no mínimo 5 caracteres';
+
+    }
+    return false;
   }
 }
 
