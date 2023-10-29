@@ -1,6 +1,6 @@
 export interface Produto {
   id?: number,
   nome: string,
-  codigoDeBarras: string,
+  codigoDeBarras: string
   preco: number
 }
