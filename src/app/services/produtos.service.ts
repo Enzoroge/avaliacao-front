@@ -20,8 +20,8 @@ export class ProdutosService {
   }
 
 
-  findById(id: number):Observable<Produto>{
-    const url = `${this.api}/${id}`;
+  getById(id: any):Observable<Produto>{
+    const url = `${this.api}/${id}`
     return this.http.get<Produto>(url)
   }
 
@@ -30,8 +30,8 @@ export class ProdutosService {
     return this.http.get<Produto[]>(url)
   }
 
-  delete(id: number):Observable<void>{
-    const url = `${this.api}/${id}`;
+  delete(id: Produto):Observable<void>{
+    const url = `${this.api}/${id.id}`;
     return this.http.delete<void>(url)
 
   }

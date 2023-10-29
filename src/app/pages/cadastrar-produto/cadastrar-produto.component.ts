@@ -3,6 +3,7 @@ import { ProdutosService } from './../../services/produtos.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class CadastrarProdutoComponent {
 
-  constructor(
+  constructor(private router : Router,
     private service: ProdutosService
   ){
 
@@ -19,19 +20,18 @@ export class CadastrarProdutoComponent {
 
     produtoForm = new FormGroup({
     nome: new FormControl('', Validators.required),
-    codigoDeBarras: new FormControl(''),
+    codigoDeBarra: new FormControl(''),
     preco: new FormControl(0)
   });
 
   create() {
     const produto: Produto = this.produtoForm.value as unknown as Produto;
-
-
     this.service.create(produto).subscribe(
-      (result) => {
+       (result) => {
+        this.router.navigate(['produtos'])
         Swal.fire(
-          'PARABÉNS CHAMPS!!',
-          'Usuário cadastrado com sucesso!',
+          'PARABÉNS!!',
+          'Produto cadastrado com sucesso!',
           'success'
         );
       },

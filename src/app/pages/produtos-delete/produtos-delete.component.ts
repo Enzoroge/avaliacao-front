@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/interfaces/produtos';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-produtos-delete',
@@ -9,14 +10,16 @@ import { ProdutosService } from 'src/app/services/produtos.service';
   styleUrls: ['./produtos-delete.component.css']
 })
 export class ProdutosDeleteComponent {
-  id_produto = ''
+  id_produto =''
 
   produto : Produto={
     nome: '',
-    codigoDeBarras: '',
+    codigoDeBarra: '',
     preco: 0
 
   }
+
+  produtos: Produto[]=[]
 
   constructor(
     private router: Router,
@@ -26,21 +29,27 @@ export class ProdutosDeleteComponent {
 
   }
 
-  // ngOnInit():void{
-  //   this.id_produto = this.route.snapshot.paramMap.get('id')!
-  //   this.findById()
-  // }
+//   ngOnInit():void{
+//     this.id_produto = this.route.snapshot.paramMap.get('id')!;
+//     this.getById()
+//   }
 
-  // delete():void{
-  //   this.service.delete(this.id_produto).subscribe(resposta =>{
-  //     this.router.navigate(['produto'])
-  //   })
-  // }
+//   delete(produto: Produto):void{
+//     this.service.delete(this.id_produto).subscribe(resposta =>{
+//       this.router.navigate(['produtos'])
+//       Swal.fire(
+//         'PARABÉNS!!',
+//         'Produto cadastrado com sucesso!',
+//         'success'
+//       );
 
-  // findById():void{
-  //   this.service.findById(this.id_produto).subscribe(resposta =>{
-  //     this.produto=resposta
-  //   })
-  // }
+//     })
+//   }
 
-}
+//   getById():void{
+//     this.service.getById(this.id_produto).subscribe(resposta =>{
+//       this.produto=resposta
+//     })
+//   }
+
+ }
