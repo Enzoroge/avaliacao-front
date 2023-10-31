@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -21,8 +22,8 @@ export class CadastrarProdutoComponent {
     nome: string= ''
 
     produtoForm = new FormGroup({
-    nome: new FormControl('', Validators.required),
-    codigoDeBarra: new FormControl('', Validators.maxLength(12)),
+    nome: new FormControl('', [Validators.required] || [Validators.minLength(4)]),
+    codigoDeBarra: new FormControl('', Validators.maxLength(12) && Validators.required),
     preco: new FormControl(0)
   });
 
@@ -44,13 +45,13 @@ export class CadastrarProdutoComponent {
     );
   }
 
-  errorValidName(){
-    if(this.nome != null){
-      return 'O nome deve ter no mínimo 5 caracteres';
+  // errorValidName(){
+  //   if(this.nome.invalid){
+  //     return 'O nome deve ter no mínimo 5 caracteres';
 
-    }
-    return false;
-  }
+  //   }
+  //   return false;
+  // }
 }
 
 
