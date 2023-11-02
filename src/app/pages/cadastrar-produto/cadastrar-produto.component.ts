@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { isEmpty } from 'rxjs';
+
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -45,13 +45,7 @@ export class CadastrarProdutoComponent {
     );
   }
 
-  // errorValidName(){
-  //   if(this.nome.invalid){
-  //     return 'O nome deve ter no mínimo 5 caracteres';
 
-  //   }
-  //   return false;
-  // }
 }
 
 

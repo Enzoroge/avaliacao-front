@@ -6,8 +6,8 @@
        <div class="col">
         <div class="mb-3">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" formControlName="nome" class="form-control" id="nome" placeholder="" name="nome" required>
-    <div class="valid-feedback">Ok</div>
+          <input  type="text" formControlName="nome" class="form-control" id="nome" placeholder="" name="nome" required>
+    <div class="valid-feedback">Campo prenchido</div>
     <div class="invalid-feedback">Campo Obrigatório</div>
         </div>
 
@@ -16,7 +16,7 @@
         <div class="mb-3">
           <label for="codigoDeBarra" class="form-label">Código de Barras</label>
           <input type="text" formControlName="codigoDeBarra" class="form-control" id="codigoDeBarra" pattern="\d*" maxlength="20" placeholder="" name="codigoDeBarra" required>
-    <div class="valid-feedback">Ok</div>
+    <div class="valid-feedback">Campo prenchido</div>
     <div class="invalid-feedback">Campo Obrigatório</div>
         </div>
       </div>
@@ -24,7 +24,7 @@
       <div class="col">
         <div class="mb-3">
           <label for="preco" class="form-label">Preço</label>
-          <input type="" formControlName="preco" class="form-control" id="preco" placeholder="R$" name="preco" >
+          <input  type="text" formControlName="preco" class="form-control" id="preco" placeholder="R$" name="preco" >
     <div class="valid-feedback">Ok</div>
     <div class="invalid-feedback">Campo Obrigatório</div>
         </div>
@@ -35,3 +35,4 @@
     <button class="btn btn-primary" type="submit" [disabled]="produtoForm.invalid" >Cadastrar</button>
   </div>
 </form>
+

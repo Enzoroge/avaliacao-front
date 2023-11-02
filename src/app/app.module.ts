@@ -9,8 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastrarProdutoComponent } from './pages/cadastrar-produto/cadastrar-produto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { ProdutosDeleteComponent } from './pages/produtos-delete/produtos-delete.component';
-import { ProdutosUpdateComponent } from './pages/produtos-update/produtos-update.component';
+;
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { ProdutosUpdateComponent } from './pages/produtos-update/produtos-update
     HeaderComponent,
     CadastrarProdutoComponent,
     ProdutosComponent,
-    ProdutosDeleteComponent,
-    ProdutosUpdateComponent
+
   ],
   imports: [
     BrowserModule,
