@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastrarProdutoComponent } from './pages/cadastrar-produto/cadastrar-produto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
-;
+import { AtualizarProdutosComponent } from './pages/atualizar-produtos/atualizar-produtos.component';
+import { NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask} from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
     HeaderComponent,
     CadastrarProdutoComponent,
     ProdutosComponent,
+    AtualizarProdutosComponent,
 
   ],
   imports: [
@@ -25,9 +27,13 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
 
   ],
-  providers: [],
+  providers: [
+    provideEnvironmentNgxMask()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

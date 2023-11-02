@@ -35,10 +35,10 @@ export class ProdutosService {
     return this.http.delete<void>(url)
 
   }
-
-  update(produto : Produto): Observable<Produto>{
+  update(produto: Produto): Observable<Produto> {
     const url = `${this.api}/${produto.id}`;
-    return this.http.put<Produto>(url, produto)
+    return this.http.put<Produto>(url, produto);
   }
+
 
 }

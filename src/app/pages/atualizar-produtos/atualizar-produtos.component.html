@@ -1,0 +1,31 @@
+<form [formGroup]="produtoForm"  (submit)=" update()" >
+  <div class="container">
+    <div class="row">
+      <input type="hidden" class="form-control" id="id"  formControlName="id">
+      <div class="col">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome"  formControlName="nome">
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="codigoDeBarra" class="form-label">Código de Barras</label>
+          <input type="text" class="form-control" id="codigoDeBarra"  formControlName="codigoDeBarra">
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="mb-3">
+          <label for="preco" class="form-label">Preço</label>
+          <input type="number" class="form-control" id="preco"  formControlName="preco" required>
+        </div>
+
+      </div>
+
+    </div>
+    <a class="btn btn-secondary me-1" routerLink="/produtos">Voltar</a>
+    <button class="btn btn-primary" type="submit" >Atualizar</button>
+  </div>
+</form>

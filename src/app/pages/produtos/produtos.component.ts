@@ -1,4 +1,4 @@
-  import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+  import { AfterViewInit, Component } from '@angular/core';
   import { Produto } from 'src/app/interfaces/produtos';
   import { ProdutosService } from 'src/app/services/produtos.service';
   import { Router } from '@angular/router';
@@ -45,6 +45,7 @@
     constructor(
       private router: Router,
       private service : ProdutosService,
+
     ){
 
     }
@@ -87,49 +88,7 @@
 
     }
 
-    selecionaUpdate(produto : Produto) {
-      this.produtoForm.reset()
-       console.log("ver saida" , produto)
-      this.produtoForm.patchValue({
-        id: produto.id,
-        nome: produto.nome,
-        codigoDeBarra: produto.codigoDeBarra,
-        preco: produto.preco
-      });
 
-    }
-
-    update():void {
-
-      const produto: Produto = this.produtoForm.value as Produto;
-
-      this.service.update(produto).subscribe((resposta) => {
-
-        this.findAll();
-        this.router.navigate(['/produtos'])
-
-        Swal.fire(
-          'PARABÉNS!!',
-          'Produto atualizado com sucesso!',
-          'success'
-
-          );
-
-
-
-      }, )
-    }
-
-
-
-
-
-    findById(): void {
-      this.service.getById(this.id_produto).subscribe((resposta) => {
-      console.log("findby", this.id_produto)
-        ;
-      });
-  }
 
     atualizarTabela(): void {
       this.findAll;
