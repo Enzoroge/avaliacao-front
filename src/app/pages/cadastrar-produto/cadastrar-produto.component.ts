@@ -32,7 +32,7 @@ export class CadastrarProdutoComponent {
   create() {
     const produto: Produto = this.produtoForm.value as unknown as Produto;
     this.service.create(produto).subscribe(
-       (result) => {
+       (resposta) => {
         this.router.navigate(['produtos'])
         Swal.fire(
           'PARABÉNS!!',
